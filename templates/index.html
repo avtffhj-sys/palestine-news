@@ -1,1 +1,678 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاسطين - بوابة أخبار فلسطين</title>
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ----------------------------------------
+               reset & base
+            ---------------------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f7f4;
+            color: #1e1e2a;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ----------------------------------------
+               header
+            ---------------------------------------- */
+        header {
+            background: linear-gradient(135deg, #1a3a2b, #2d5e3f);
+            color: #fff;
+            padding: 25px 0 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo h1 i {
+            color: #f4c542;
+            margin-left: 8px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            display: block;
+            opacity: 0.8;
+            font-weight: 300;
+            margin-top: -5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            font-size: 1.05rem;
+        }
+
+        nav ul li a {
+            transition: 0.3s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover {
+            border-bottom-color: #f4c542;
+            color: #f4c542;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 40px;
+            padding: 5px 15px;
+            backdrop-filter: blur(4px);
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 8px 5px;
+            color: #fff;
+            outline: none;
+            width: 140px;
+        }
+
+        .search-box input::placeholder {
+            color: #ddd;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        /* ----------------------------------------
+               hero section (فكرة إضافية)
+            ---------------------------------------- */
+        .hero {
+            background: linear-gradient(135deg, #e8e0d5, #d6cdbf);
+            padding: 40px 0 50px;
+            margin-top: 0;
+            border-radius: 0 0 60px 60px;
+            box-shadow: inset 0 -8px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #1a3a2b;
+        }
+
+        .hero-text h2 i {
+            color: #c0392b;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 15px 0 20px;
+            color: #2c3e50;
+        }
+
+        .hero-btn {
+            background: #1a3a2b;
+            color: #fff;
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+            border: 2px solid #1a3a2b;
+        }
+
+        .hero-btn:hover {
+            background: transparent;
+            color: #1a3a2b;
+        }
+
+        .hero-img {
+            flex: 1 1 250px;
+            text-align: center;
+            font-size: 7rem;
+            opacity: 0.6;
+            color: #2d5e3f;
+        }
+
+        /* ----------------------------------------
+               قسم الأخبار الرئيسي
+            ---------------------------------------- */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 50px 0 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: #f4c542;
+            border-radius: 4px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            height: 180px;
+            background: #c9bdb0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #4a3f36;
+        }
+
+        .card-body {
+            padding: 20px 22px 25px;
+        }
+
+        .card-body .tag {
+            background: #f4c542;
+            padding: 2px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            color: #1e1e2a;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a3a2b;
+        }
+
+        .card-body p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card-body .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #f0ede8;
+            padding-top: 12px;
+        }
+
+        .card-body .meta i {
+            margin-left: 5px;
+        }
+
+        /* ----------------------------------------
+               أفكار إضافية : قسم "فلسطين اليوم"
+            ---------------------------------------- */
+        .palestine-today {
+            background: #eef3ee;
+            padding: 40px 0;
+            border-radius: 50px;
+            margin: 50px 0;
+        }
+
+        .flex-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            text-align: center;
+            background: #fff;
+            padding: 25px 15px;
+            border-radius: 30px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.02);
+            background: #fffdf8;
+        }
+
+        .feature-item i {
+            font-size: 2.8rem;
+            color: #1a3a2b;
+            margin-bottom: 12px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            color: #1a3a2b;
+        }
+
+        /* ----------------------------------------
+               قسم الفيديو / البث المباشر (فكرة)
+            ---------------------------------------- */
+        .live-section {
+            background: #1e2b26;
+            color: #fff;
+            padding: 30px 0 40px;
+            border-radius: 50px;
+            margin: 40px 0;
+        }
+
+        .live-flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .live-flex .live-text {
+            flex: 1 1 200px;
+        }
+
+        .live-flex .live-text h3 {
+            font-size: 1.8rem;
+        }
+
+        .live-flex .live-text h3 i {
+            color: #f4c542;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .live-flex .live-text .btn-live {
+            background: #c0392b;
+            color: #fff;
+            padding: 10px 28px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .live-flex .live-text .btn-live:hover {
+            background: #e74c3c;
+        }
+
+        .live-flex .live-placeholder {
+            flex: 2 1 300px;
+            background: #2c3e35;
+            padding: 30px;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 1.2rem;
+            border: 2px dashed #5a7a65;
+        }
+
+        /* ----------------------------------------
+               footer
+            ---------------------------------------- */
+        footer {
+            background: #1a2a1f;
+            color: #ccc;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-grid h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-grid ul {
+            list-style: none;
+        }
+
+        .footer-grid ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-grid ul li a:hover {
+            color: #f4c542;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            background: #2c3e35;
+            color: #fff;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 38px;
+            margin-left: 8px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #f4c542;
+            color: #1a2a1f;
+        }
+
+        .copy {
+            text-align: center;
+            padding-top: 25px;
+            margin-top: 25px;
+            border-top: 1px solid #2c3e35;
+            font-size: 0.9rem;
+        }
+
+        /* ----------------------------------------
+               responsive
+            ---------------------------------------- */
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                gap: 12px;
+            }
+            nav ul {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .search-box input {
+                width: 100px;
+            }
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            .hero-img {
+                font-size: 4rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            .hero-text h2 {
+                font-size: 1.6rem;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======= header ======= -->
+    <header>
+        <div class="container header-flex">
+            <div class="logo">
+                <h1><i class="fas fa-flag"></i> فاسطين</h1>
+                <span>بوابة أخبار فلسطين الأولى</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">أخبار</a></li>
+                    <li><a href="#">تقارير</a></li>
+                    <li><a href="#">ثقافة</a></li>
+                    <li><a href="#">اتصل</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="ابحث...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= hero ======= -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2><i class="fas fa-star"></i> فلسطين .. الحكاية</h2>
+                <p>ننقل لكم الخبر بصدق، ونروي تفاصيل الأرض والإنسان. كل ما يهمك عن فلسطين في مكان واحد.</p>
+                <a href="#" class="hero-btn">استكشف الأخبار <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="hero-img">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= قسم الأخبار ======= -->
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-newspaper" style="margin-left:10px; color:#1a3a2b;"></i> آخر الأخبار</h2>
+        <div class="news-grid">
+
+            <div class="news-card">
+                <div class="card-img" style="background:#b5c9b0;"><i class="fas fa-city"></i></div>
+                <div class="card-body">
+                    <span class="tag">سياسة</span>
+                    <h3>القدس: تطورات جديدة في البلدة القديمة</h3>
+                    <p>شهدت البلدة القديمة اليوم توتراً مع استمرار الهجمات على الممتلكات...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 21 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 34</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="card-img" style="background:#d4c5a0;"><i class="fas fa-people-arrows"></i></div>
+                <div class="card-body">
+                    <span class="tag">مجتمع</span>
+                    <h3>أهالي غزة يطلقون حملة إغاثة</h3>
+                    <p>تضامناً مع العائلات المتضررة، انطلقت حملة شعبية لجمع التبرعات...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 20 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 18</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="card-img" style="background:#b8a9a9;"><i class="fas fa-kaaba"></i></div>
+                <div class="card-body">
+                    <span class="tag">دين</span>
+                    <h3>المسجد الأقصى يستقبل المصلين</h3>
+                    <p>آلاف المصلين أدوا صلاة الجمعة في رحاب المسجد الأقصى المبارك...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 19 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 27</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="card-img" style="background:#c2b8aa;"><i class="fas fa-palette"></i></div>
+                <div class="card-body">
+                    <span class="tag">ثقافة</span>
+                    <h3>معرض الفن التشكيلي في رام الله</h3>
+                    <p>افتتح في رام الله معرض يضم أعمال 30 فناناً فلسطينياً...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 18 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 12</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======= فكرة إضافية: فلسطين اليوم ======= -->
+    <div class="container palestine-today">
+        <h2 class="section-title" style="margin-top:0;"><i class="fas fa-hand-peace" style="margin-left:10px; color:#1a3a2b;"></i> فلسطين اليوم</h2>
+        <div class="flex-features">
+            <div class="feature-item">
+                <i class="fas fa-thermometer-half"></i>
+                <h4>طقس القدس</h4>
+                <p>مشمس 27°</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-pound-sign"></i>
+                <h4>سعر الصرف</h4>
+                <p>دولار = 3.6 شيكل</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <h4>مواقيت الصلاة</h4>
+                <p>الظهر 12:32</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-calendar-week"></i>
+                <h4>فعاليات اليوم</h4>
+                <p>5 فعاليات</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= فكرة إضافية: بث مباشر / فيديو ======= -->
+    <div class="container live-section">
+        <div class="live-flex">
+            <div class="live-text">
+                <h3><i class="fas fa-circle"></i> البث المباشر</h3>
+                <p>تابع أجواء فلسطين لحظة بلحظة عبر قناتنا.</p>
+                <a href="#" class="btn-live"><i class="fas fa-play"></i> شاهد الآن</a>
+            </div>
+            <div class="live-placeholder">
+                <i class="fas fa-video" style="font-size:3rem; display:block; margin-bottom:10px;"></i>
+                <span>فيديو: مظاهرة سلمية في الخليل</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= footer ======= -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4><i class="fas fa-flag"></i> فاسطين</h4>
+                    <p style="font-size:0.9rem; line-height:1.8;">منصة مستقلة تعنى بنقل أخبار فلسطين بعمق وموضوعية، ونسعى لتقديم محتوى يعكس روح الأرض.</p>
+                </div>
+                <div>
+                    <h4>أقسام</h4>
+                    <ul>
+                        <li><a href="#">سياسة</a></li>
+                        <li><a href="#">اقتصاد</a></li>
+                        <li><a href="#">ثقافة</a></li>
+                        <li><a href="#">رياضة</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>روابط</h4>
+                    <ul>
+                        <li><a href="#">عن الموقع</a></li>
+                        <li><a href="#">فريق التحرير</a></li>
+                        <li><a href="#">إعلن معنا</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تابعنا</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p style="margin-top:15px; font-size:0.8rem;">البريد: info@falestine.ps</p>
+                </div>
+            </div>
+            <div class="copy">
+                &copy; 2026 فاسطين - جميع الحقوق محفوظة. تصميم <i class="fas fa-heart" style="color:#c0392b;"></i> لفلسطين.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
