@@ -1,29 +1,10 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة أخبار فلسطين</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #007a3d;
-        }
-    </style>
-</head>
-<body>
-    <h1>مرحباً بك في موقع بوابة أخبار فلسطين 🇵🇸</h1>
-    <p>الموقع يعمل الآن بنجاح على Render!</p>
-</body>
-</html>
+آسف على السهو! سأقوم الآن بإضافة **قسم الاتصال بنا** بشكل متكامل مع بيانات "أبو سعيد" ورقم التواصل **773664939** بتنسيق احترافي وجذاب.
 
+---
 
+## 🚀 الموقع الكامل مع قسم الاتصال بنا
 
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -148,7 +129,44 @@
         }
 
         /* ----------------------------------------
-               hero section (فكرة إضافية)
+               breaking news
+            ---------------------------------------- */
+        .breaking-news {
+            background: #c0392b;
+            color: #fff;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .breaking-news .container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .breaking-news .label {
+            background: #fff;
+            color: #c0392b;
+            padding: 2px 16px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .breaking-news .ticker {
+            display: inline-block;
+            animation: ticker 25s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ----------------------------------------
+               hero section
             ---------------------------------------- */
         .hero {
             background: linear-gradient(135deg, #e8e0d5, #d6cdbf);
@@ -211,7 +229,7 @@
         }
 
         /* ----------------------------------------
-               قسم الأخبار الرئيسي
+               قسم الأخبار
             ---------------------------------------- */
         .section-title {
             font-size: 2rem;
@@ -232,6 +250,15 @@
             border-radius: 4px;
         }
 
+        .section-title .gaza-badge {
+            background: #c0392b;
+            color: #fff;
+            font-size: 0.9rem;
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-right: 10px;
+        }
+
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -250,6 +277,10 @@
         .news-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-card.gaza-card {
+            border-right: 4px solid #c0392b;
         }
 
         .card-img {
@@ -279,6 +310,16 @@
             color: #1e1e2a;
         }
 
+        .card-body .tag.urgent {
+            background: #c0392b;
+            color: #fff;
+        }
+
+        .card-body .tag.gaza-tag {
+            background: #1a3a2b;
+            color: #fff;
+        }
+
         .card-body h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
@@ -305,7 +346,76 @@
         }
 
         /* ----------------------------------------
-               أفكار إضافية : قسم "فلسطين اليوم"
+               تقارير section
+            ---------------------------------------- */
+        .reports-section {
+            background: #eef3ee;
+            padding: 40px 30px;
+            border-radius: 50px;
+            margin: 50px 0;
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .report-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            transition: 0.3s;
+            border-bottom: 4px solid #1a3a2b;
+        }
+
+        .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .report-card .report-icon {
+            font-size: 2.5rem;
+            color: #1a3a2b;
+            margin-bottom: 12px;
+        }
+
+        .report-card h4 {
+            font-size: 1.2rem;
+            color: #1a3a2b;
+            margin-bottom: 8px;
+        }
+
+        .report-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .report-card .report-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .report-card .btn-report {
+            display: inline-block;
+            margin-top: 12px;
+            color: #1a3a2b;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .report-card .btn-report:hover {
+            color: #c0392b;
+        }
+
+        /* ----------------------------------------
+               فلسطين اليوم
             ---------------------------------------- */
         .palestine-today {
             background: #eef3ee;
@@ -348,7 +458,7 @@
         }
 
         /* ----------------------------------------
-               قسم الفيديو / البث المباشر (فكرة)
+               live section
             ---------------------------------------- */
         .live-section {
             background: #1e2b26;
@@ -379,15 +489,9 @@
         }
 
         @keyframes pulse {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.3;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
         }
 
         .live-flex .live-text .btn-live {
@@ -413,6 +517,159 @@
             text-align: center;
             font-size: 1.2rem;
             border: 2px dashed #5a7a65;
+        }
+
+        /* ========================================
+               قسم الاتصال بنا (الجديد)
+            ======================================== */
+        .contact-section {
+            background: #fff;
+            padding: 40px 30px 50px;
+            border-radius: 50px;
+            margin: 50px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f0ede8;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: #f9f7f4;
+            padding: 30px 20px 25px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1a3a2b, #f4c542);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+
+        .contact-card .contact-icon {
+            font-size: 2.8rem;
+            color: #1a3a2b;
+            margin-bottom: 12px;
+            background: #eef3ee;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover .contact-icon {
+            background: #1a3a2b;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .contact-card h4 {
+            color: #1a3a2b;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .contact-card .contact-sub {
+            color: #888;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .contact-card .contact-value {
+            color: #1e1e2a;
+            font-size: 1.1rem;
+            font-weight: 600;
+            direction: ltr;
+            background: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            border: 1px solid #eee;
+        }
+
+        .contact-card .contact-value i {
+            color: #1a3a2b;
+            margin-left: 8px;
+        }
+
+        .contact-card .contact-value .phone-code {
+            color: #888;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* كارت المبرمج - مميز */
+        .contact-card.developer {
+            background: linear-gradient(135deg, #1a3a2b, #2d5e3f);
+            color: #fff;
+            border: none;
+        }
+
+        .contact-card.developer::before {
+            background: linear-gradient(90deg, #f4c542, #f4c542);
+        }
+
+        .contact-card.developer .contact-icon {
+            background: rgba(255, 255, 255, 0.15);
+            color: #f4c542;
+        }
+
+        .contact-card.developer:hover .contact-icon {
+            background: #f4c542;
+            color: #1a3a2b;
+        }
+
+        .contact-card.developer h4 {
+            color: #fff;
+        }
+
+        .contact-card.developer .contact-sub {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-card.developer .contact-value {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+            direction: ltr;
+        }
+
+        .contact-card.developer .contact-value i {
+            color: #f4c542;
+        }
+
+        .contact-card.developer .developer-badge {
+            display: inline-block;
+            background: #f4c542;
+            color: #1a3a2b;
+            font-size: 0.7rem;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-top: 8px;
         }
 
         /* ----------------------------------------
@@ -501,6 +758,10 @@
             .section-title {
                 font-size: 1.6rem;
             }
+            .breaking-news .container {
+                flex-direction: column;
+                gap: 5px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -513,10 +774,29 @@
             .news-grid {
                 grid-template-columns: 1fr;
             }
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- ======= breaking news ======= -->
+    <div class="breaking-news">
+        <div class="container">
+            <span class="label"><i class="fas fa-bolt"></i> عاجل</span>
+            <div class="ticker">
+                <span>🇵🇸 غزة: جهود إغاثية مكثفة بعد موجة النزوح &bull; </span>
+                <span>🇵🇸 القدس: ارتفاع عدد الزوار في البلدة القديمة &bull; </span>
+                <span>🇵🇸 فلسطين تتصدر المشهد الدولي في قمة الأمم المتحدة &bull; </span>
+                <span>🇵🇸 رئيس الوزراء يعلن عن حزمة دعم جديدة للقطاع الزراعي</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ======= header ======= -->
     <header>
@@ -528,10 +808,9 @@
             <nav>
                 <ul>
                     <li><a href="#">الرئيسية</a></li>
-                    <li><a href="#">أخبار</a></li>
-                    <li><a href="#">تقارير</a></li>
-                    <li><a href="#">ثقافة</a></li>
-                    <li><a href="#">اتصل</a></li>
+                    <li><a href="#news">أخبار</a></li>
+                    <li><a href="#reports">تقارير</a></li>
+                    <li><a href="#contact">اتصل</a></li>
                 </ul>
             </nav>
             <div class="search-box">
@@ -556,58 +835,62 @@
     </section>
 
     <!-- ======= قسم الأخبار ======= -->
-    <div class="container">
-        <h2 class="section-title"><i class="fas fa-newspaper" style="margin-left:10px; color:#1a3a2b;"></i> آخر الأخبار</h2>
+    <div class="container" id="news">
+        <h2 class="section-title">
+            <i class="fas fa-newspaper" style="margin-left:10px; color:#1a3a2b;"></i> آخر الأخبار
+            <span class="gaza-badge"><i class="fas fa-heart" style="margin-left:5px;"></i> غزة</span>
+        </h2>
         <div class="news-grid">
 
+            <div class="news-card gaza-card">
+                <div class="card-img" style="background:#b5c9b0;"><i class="fas fa-hand-holding-heart"></i></div>
+                <div class="card-body">
+                    <span class="tag urgent">عاجل</span>
+                    <span class="tag gaza-tag"><i class="fas fa-heart"></i> غزة</span>
+                    <h3>غزة: جهود إغاثية عاجلة في شمال القطاع</h3>
+                    <p>فرق الإغاثة توزع المساعدات على آلاف العائلات النازحة في شمال غزة...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 21 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 89</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card gaza-card">
+                <div class="card-img" style="background:#d4c5a0;"><i class="fas fa-hospital"></i></div>
+                <div class="card-body">
+                    <span class="tag gaza-tag"><i class="fas fa-heart"></i> غزة</span>
+                    <h3>مستشفى الشفاء يستقبل حالات جديدة</h3>
+                    <p>مستشفى الشفاء في غزة يستقبل عشرات الجرحى مع نقص حاد في الأدوية...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 20 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 56</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card gaza-card">
+                <div class="card-img" style="background:#b8a9a9;"><i class="fas fa-people-arrows"></i></div>
+                <div class="card-body">
+                    <span class="tag gaza-tag"><i class="fas fa-heart"></i> غزة</span>
+                    <h3>نزوح جماعي من مناطق القتال في غزة</h3>
+                    <p>آلاف العائلات تغادر منازلها في مناطق القتال متجهة إلى وسط القطاع...</p>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 19 يوليو 2026</span>
+                        <span><i class="far fa-comment"></i> 73</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="news-card">
-                <div class="card-img" style="background:#b5c9b0;"><i class="fas fa-city"></i></div>
+                <div class="card-img" style="background:#c2b8aa;"><i class="fas fa-city"></i></div>
                 <div class="card-body">
                     <span class="tag">سياسة</span>
                     <h3>القدس: تطورات جديدة في البلدة القديمة</h3>
                     <p>شهدت البلدة القديمة اليوم توتراً مع استمرار الهجمات على الممتلكات...</p>
                     <div class="meta">
-                        <span><i class="far fa-calendar-alt"></i> 21 يوليو 2026</span>
-                        <span><i class="far fa-comment"></i> 34</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="card-img" style="background:#d4c5a0;"><i class="fas fa-people-arrows"></i></div>
-                <div class="card-body">
-                    <span class="tag">مجتمع</span>
-                    <h3>أهالي غزة يطلقون حملة إغاثة</h3>
-                    <p>تضامناً مع العائلات المتضررة، انطلقت حملة شعبية لجمع التبرعات...</p>
-                    <div class="meta">
-                        <span><i class="far fa-calendar-alt"></i> 20 يوليو 2026</span>
-                        <span><i class="far fa-comment"></i> 18</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="card-img" style="background:#b8a9a9;"><i class="fas fa-kaaba"></i></div>
-                <div class="card-body">
-                    <span class="tag">دين</span>
-                    <h3>المسجد الأقصى يستقبل المصلين</h3>
-                    <p>آلاف المصلين أدوا صلاة الجمعة في رحاب المسجد الأقصى المبارك...</p>
-                    <div class="meta">
-                        <span><i class="far fa-calendar-alt"></i> 19 يوليو 2026</span>
-                        <span><i class="far fa-comment"></i> 27</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="card-img" style="background:#c2b8aa;"><i class="fas fa-palette"></i></div>
-                <div class="card-body">
-                    <span class="tag">ثقافة</span>
-                    <h3>معرض الفن التشكيلي في رام الله</h3>
-                    <p>افتتح في رام الله معرض يضم أعمال 30 فناناً فلسطينياً...</p>
-                    <div class="meta">
                         <span><i class="far fa-calendar-alt"></i> 18 يوليو 2026</span>
-                        <span><i class="far fa-comment"></i> 12</span>
+                        <span><i class="far fa-comment"></i> 34</span>
                     </div>
                 </div>
             </div>
@@ -615,14 +898,57 @@
         </div>
     </div>
 
-    <!-- ======= فكرة إضافية: فلسطين اليوم ======= -->
+    <!-- ======= قسم التقارير ======= -->
+    <div class="container reports-section" id="reports">
+        <h2 class="section-title" style="margin-top:0;">
+            <i class="fas fa-file-alt" style="margin-left:10px; color:#1a3a2b;"></i> تقارير حصرية
+        </h2>
+        <div class="reports-grid">
+
+            <div class="report-card">
+                <div class="report-icon"><i class="fas fa-people-arrows"></i></div>
+                <h4>تقرير: النزوح في غزة</h4>
+                <p>تحليل شامل لأوضاع النازحين في قطاع غزة مع أرقام وإحصائيات دقيقة.</p>
+                <div class="report-meta">
+                    <span><i class="far fa-calendar-alt"></i> 21 يوليو 2026</span>
+                    <span><i class="far fa-clock"></i> 15 دقيقة</span>
+                </div>
+                <a href="#" class="btn-report">اقرأ التقرير <i class="fas fa-arrow-left"></i></a>
+            </div>
+
+            <div class="report-card">
+                <div class="report-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>تقرير: الأوضاع الإنسانية</h4>
+                <p>تقرير ميداني عن الوضع الإنساني في فلسطين مع تركيز على غزة.</p>
+                <div class="report-meta">
+                    <span><i class="far fa-calendar-alt"></i> 20 يوليو 2026</span>
+                    <span><i class="far fa-clock"></i> 12 دقيقة</span>
+                </div>
+                <a href="#" class="btn-report">اقرأ التقرير <i class="fas fa-arrow-left"></i></a>
+            </div>
+
+            <div class="report-card">
+                <div class="report-icon"><i class="fas fa-water"></i></div>
+                <h4>تقرير: أزمة المياه</h4>
+                <p>تحقيق معمق حول أزمة المياه في فلسطين وتأثيرها على القطاع الزراعي.</p>
+                <div class="report-meta">
+                    <span><i class="far fa-calendar-alt"></i> 19 يوليو 2026</span>
+                    <span><i class="far fa-clock"></i> 10 دقائق</span>
+                </div>
+                <a href="#" class="btn-report">اقرأ التقرير <i class="fas fa-arrow-left"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======= فلسطين اليوم ======= -->
     <div class="container palestine-today">
         <h2 class="section-title" style="margin-top:0;"><i class="fas fa-hand-peace" style="margin-left:10px; color:#1a3a2b;"></i> فلسطين اليوم</h2>
         <div class="flex-features">
             <div class="feature-item">
                 <i class="fas fa-thermometer-half"></i>
-                <h4>طقس القدس</h4>
-                <p>مشمس 27°</p>
+                <h4>طقس غزة</h4>
+                <p>مشمس 30°</p>
             </div>
             <div class="feature-item">
                 <i class="fas fa-pound-sign"></i>
@@ -642,7 +968,7 @@
         </div>
     </div>
 
-    <!-- ======= فكرة إضافية: بث مباشر / فيديو ======= -->
+    <!-- ======= بث مباشر ======= -->
     <div class="container live-section">
         <div class="live-flex">
             <div class="live-text">
@@ -652,53 +978,55 @@
             </div>
             <div class="live-placeholder">
                 <i class="fas fa-video" style="font-size:3rem; display:block; margin-bottom:10px;"></i>
-                <span>فيديو: مظاهرة سلمية في الخليل</span>
+                <span>🎥 فيديو: مظاهرة سلمية في الخليل</span>
+                <p style="font-size:0.9rem; opacity:0.7; margin-top:5px;">تم البث قبل 10 دقائق</p>
             </div>
         </div>
     </div>
 
-    <!-- ======= footer ======= -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4><i class="fas fa-flag"></i> فاسطين</h4>
-                    <p style="font-size:0.9rem; line-height:1.8;">منصة مستقلة تعنى بنقل أخبار فلسطين بعمق وموضوعية، ونسعى لتقديم محتوى يعكس روح الأرض.</p>
-                </div>
-                <div>
-                    <h4>أقسام</h4>
-                    <ul>
-                        <li><a href="#">سياسة</a></li>
-                        <li><a href="#">اقتصاد</a></li>
-                        <li><a href="#">ثقافة</a></li>
-                        <li><a href="#">رياضة</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>روابط</h4>
-                    <ul>
-                        <li><a href="#">عن الموقع</a></li>
-                        <li><a href="#">فريق التحرير</a></li>
-                        <li><a href="#">إعلن معنا</a></li>
-                        <li><a href="#">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>تابعنا</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <p style="margin-top:15px; font-size:0.8rem;">البريد: info@falestine.ps</p>
-                </div>
-            </div>
-            <div class="copy">
-                &copy; 2026 فاسطين - جميع الحقوق محفوظة. تصميم <i class="fas fa-heart" style="color:#c0392b;"></i> لفلسطين.
-            </div>
-        </div>
-    </footer>
+    <!-- ============================================
+         قسم الاتصال بنا (المطلوب)
+         ============================================ -->
+    <div class="container contact-section" id="contact">
+        <h2 class="section-title" style="margin-top:0;">
+            <i class="fas fa-phone-alt" style="margin-left:10px; color:#1a3a2b;"></i> اتصل بنا
+        </h2>
+        <p style="text-align:center; color:#666; font-size:1.05rem; max-width:600px; margin:0 auto 20px;">
+            تواصل مع فريق <strong>فاسطين</strong> لأي استفسار أو اقتراح، نسعد بخدمتكم.
+        </p>
+        <div class="contact-grid">
 
-</body>
-</html>
+            <!-- بطاقة المبرمج - أبو سعيد (مميزة) -->
+            <div class="contact-card developer">
+                <div class="contact-icon"><i class="fas fa-code"></i></div>
+                <h4>إعداد وبرمجة</h4>
+                <div class="contact-sub">المطور الرئيسي</div>
+                <div class="contact-value">
+                    <i class="fas fa-user"></i> أبو سعيد
+                </div>
+                <div style="margin: 10px 0 5px;">
+                    <div class="contact-value" style="background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.15); font-size:1.15rem; direction:ltr;">
+                        <i class="fas fa-phone"></i> <span class="phone-code">+970</span> 77 366 4939
+                    </div>
+                </div>
+                <div class="developer-badge">
+                    <i class="fas fa-star"></i> مطور معتمد
+                </div>
+            </div>
+
+            <!-- بطاقة البريد الإلكتروني -->
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <h4>البريد الإلكتروني</h4>
+                <div class="contact-sub">للتواصل الرسمي</div>
+                <div class="contact-value" style="direction:ltr;">
+                    <i class="fas fa-envelope"></i> info@falestine.ps
+                </div>
+            </div>
+
+            <!-- بطاقة الهاتف -->
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                <h4>الهاتف</h4>
+                <div class="contact-sub">الدعم الفني</div>
+                <div class="contact-value
