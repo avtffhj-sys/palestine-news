@@ -1,16 +1,11 @@
-PythonProject2/
-├── app.py (أو main.py)
-├── requirements.txt
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── img/
-│       └── logo.png
-└── templates/
-    └── index.html  (هنا نضع قالب الموقع)
 import os
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
