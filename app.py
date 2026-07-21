@@ -1,0 +1,12 @@
+PythonProject2/
+├── app.py (أو main.py)
+├── requirements.txt
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── img/
+│       └── logo.png
+└── templates/
+    └── index.html  (هنا نضع قالب الموقع)
