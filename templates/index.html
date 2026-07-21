@@ -1,20 +1,11 @@
-تم إضافة **قسم التعليقات** التفاعلي إلى الموقع، مع تصميم متكامل وسهولة في الاستخدام. يمكن للمستخدمين إضافة تعليقاتهم وعرضها فوراً.
-
----
-
-### ✅ الكود الكامل مع التعليقات
-
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>بوابة أخبار فلسطين</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فاسطين - بوابة أخبار فلسطين</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ---------- reset & base ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -36,7 +27,7 @@
             margin: 0 auto;
         }
 
-        /* ---------- header ---------- */
+        /* header */
         header {
             background: linear-gradient(135deg, #1a3a2b, #2d5e3f);
             color: #fff;
@@ -55,7 +46,6 @@
         .logo h1 {
             font-size: 2.2rem;
             font-weight: 700;
-            letter-spacing: 1px;
         }
         .logo h1 i {
             color: #f4c542;
@@ -89,7 +79,6 @@
             background: rgba(255, 255, 255, 0.15);
             border-radius: 40px;
             padding: 5px 15px;
-            backdrop-filter: blur(4px);
         }
         .search-box input {
             background: transparent;
@@ -110,7 +99,7 @@
             font-size: 1.1rem;
         }
 
-        /* ---------- breaking news ---------- */
+        /* breaking news */
         .breaking-news {
             background: #c0392b;
             color: #fff;
@@ -141,12 +130,11 @@
             100% { transform: translateX(-100%); }
         }
 
-        /* ---------- hero ---------- */
+        /* hero */
         .hero {
             background: linear-gradient(135deg, #e8e0d5, #d6cdbf);
             padding: 40px 0 50px;
             border-radius: 0 0 60px 60px;
-            box-shadow: inset 0 -8px 20px rgba(0, 0, 0, 0.03);
         }
         .hero-content {
             display: flex;
@@ -193,7 +181,7 @@
             color: #2d5e3f;
         }
 
-        /* ---------- section title ---------- */
+        /* section title */
         .section-title {
             font-size: 2rem;
             font-weight: 700;
@@ -220,7 +208,7 @@
             margin-right: 10px;
         }
 
-        /* ---------- news grid ---------- */
+        /* news grid */
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -291,12 +279,9 @@
             border-top: 1px solid #f0ede8;
             padding-top: 12px;
         }
-        .card-body .meta i {
-            margin-left: 5px;
-        }
 
-        /* ---------- contact & comments ---------- */
-        .contact-section {
+        /* comments section (new) */
+        .comments-section {
             background: #fff;
             padding: 40px 30px 50px;
             border-radius: 50px;
@@ -304,91 +289,10 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
             border: 1px solid #f0ede8;
         }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .contact-card {
-            background: #f9f7f4;
-            padding: 30px 20px 25px;
-            border-radius: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-            position: relative;
-            overflow: hidden;
-        }
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #1a3a2b, #f4c542);
-        }
-        .contact-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-            background: #fff;
-        }
-        .contact-card .contact-icon {
-            font-size: 2.8rem;
-            color: #1a3a2b;
-            margin-bottom: 12px;
-            background: #eef3ee;
-            width: 70px;
-            height: 70px;
-            line-height: 70px;
-            border-radius: 50%;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .contact-card:hover .contact-icon {
-            background: #1a3a2b;
-            color: #fff;
-            transform: scale(1.05);
-        }
-        .contact-card h4 {
-            color: #1a3a2b;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-        .contact-card .contact-sub {
-            color: #888;
-            font-size: 0.8rem;
-            font-weight: 400;
-            margin-bottom: 8px;
-        }
-        .contact-card .contact-value {
-            color: #1e1e2a;
-            font-size: 1.1rem;
-            font-weight: 600;
-            direction: ltr;
-            background: #fff;
-            padding: 6px 16px;
-            border-radius: 30px;
-            display: inline-block;
-            border: 1px solid #eee;
-        }
-        .contact-card .contact-value i {
-            color: #1a3a2b;
-            margin-left: 8px;
-        }
-
-        /* ---------- comments section ---------- */
-        .comments-section {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid #f0ede8;
-        }
         .comments-section h3 {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #1a3a2b;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .comments-section h3 i {
             color: #f4c542;
@@ -452,8 +356,6 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(26, 58, 43, 0.2);
         }
-
-        /* ---------- comment list ---------- */
         .comment-list {
             display: flex;
             flex-direction: column;
@@ -518,7 +420,7 @@
             padding: 30px 0;
         }
 
-        /* ---------- footer ---------- */
+        /* footer */
         footer {
             background: #1a2a1f;
             color: #ccc;
@@ -569,7 +471,7 @@
             font-size: 0.9rem;
         }
 
-        /* ---------- responsive ---------- */
+        /* responsive */
         @media (max-width: 768px) {
             .header-flex {
                 flex-direction: column;
@@ -607,9 +509,6 @@
             .news-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
             .comment-form .form-row {
                 flex-direction: column;
             }
@@ -643,7 +542,7 @@
                     <li><a href="#">الرئيسية</a></li>
                     <li><a href="#news">أخبار</a></li>
                     <li><a href="#reports">تقارير</a></li>
-                    <li><a href="#contact">اتصل</a></li>
+                    <li><a href="#comments">التعليقات</a></li>
                 </ul>
             </nav>
             <div class="search-box">
@@ -726,157 +625,25 @@
         </div>
     </div>
 
-    <!-- ======= قسم التقارير ======= -->
-    <div class="container reports-section" id="reports">
-        <h2 class="section-title" style="margin-top:0;">
-            <i class="fas fa-file-alt" style="margin-left:10px; color:#1a3a2b;"></i> تقارير حصرية
-        </h2>
-        <div class="reports-grid">
-            <div class="report-card">
-                <div class="report-icon"><i class="fas fa-people-arrows"></i></div>
-                <h4>تقرير: النزوح في غزة</h4>
-                <p>تحليل شامل لأوضاع النازحين في قطاع غزة مع أرقام وإحصائيات دقيقة.</p>
-                <div class="report-meta">
-                    <span><i class="far fa-calendar-alt"></i> 21 يوليو 2026</span>
-                    <span><i class="far fa-clock"></i> 15 دقيقة</span>
-                </div>
-                <a href="#" class="btn-report">اقرأ التقرير <i class="fas fa-arrow-left"></i></a>
-            </div>
-            <div class="report-card">
-                <div class="report-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                <h4>تقرير: الأوضاع الإنسانية</h4>
-                <p>تقرير ميداني عن الوضع الإنساني في فلسطين مع تركيز على غزة.</p>
-                <div class="report-meta">
-                    <span><i class="far fa-calendar-alt"></i> 20 يوليو 2026</span>
-                    <span><i class="far fa-clock"></i> 12 دقيقة</span>
-                </div>
-                <a href="#" class="btn-report">اقرأ التقرير <i class="fas fa-arrow-left"></i></a>
-            </div>
-            <div class="report-card">
-                <div class="report-icon"><i class="fas fa-water"></i></div>
-                <h4>تقرير: أزمة المياه</h4>
-                <p>تحقيق معمق حول أزمة المياه في فلسطين وتأثيرها على القطاع الزراعي.</p>
-                <div class="report-meta">
-                    <span><i class="far fa-calendar-alt"></i> 19 يوليو 2026</span>
-                    <span><i class="far fa-clock"></i> 10 دقائق</span>
-                </div>
-                <a href="#" class="btn-report">اقرأ التقرير <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </div>
+    <!-- ======= قسم التعليقات (الجديد) ======= -->
+    <div class="container comments-section" id="comments">
+        <h3><i class="fas fa-comments"></i> التعليقات</h3>
 
-    <!-- ======= فلسطين اليوم ======= -->
-    <div class="container palestine-today">
-        <h2 class="section-title" style="margin-top:0;"><i class="fas fa-hand-peace" style="margin-left:10px; color:#1a3a2b;"></i> فلسطين اليوم</h2>
-        <div class="flex-features">
-            <div class="feature-item">
-                <i class="fas fa-thermometer-half"></i>
-                <h4>طقس غزة</h4>
-                <p>مشمس 30°</p>
+        <!-- نموذج إضافة تعليق -->
+        <form class="comment-form" id="commentForm">
+            <div class="form-row">
+                <input type="text" id="commentName" placeholder="اسمك" required>
+                <input type="email" id="commentEmail" placeholder="بريدك الإلكتروني (اختياري)">
             </div>
-            <div class="feature-item">
-                <i class="fas fa-pound-sign"></i>
-                <h4>سعر الصرف</h4>
-                <p>دولار = 3.6 شيكل</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-clock"></i>
-                <h4>مواقيت الصلاة</h4>
-                <p>الظهر 12:32</p>
-            </div>
-            <div class="feature-item">
-                <i class="fas fa-calendar-week"></i>
-                <h4>فعاليات اليوم</h4>
-                <p>5 فعاليات</p>
-            </div>
-        </div>
-    </div>
+            <textarea id="commentText" placeholder="اكتب تعليقك هنا..." required></textarea>
+            <button type="submit"><i class="fas fa-paper-plane"></i> أضف تعليقاً</button>
+        </form>
 
-    <!-- ======= بث مباشر ======= -->
-    <div class="container live-section">
-        <div class="live-flex">
-            <div class="live-text">
-                <h3><i class="fas fa-circle"></i> البث المباشر</h3>
-                <p>تابع أجواء فلسطين لحظة بلحظة عبر قناتنا.</p>
-                <a href="#" class="btn-live"><i class="fas fa-play"></i> شاهد الآن</a>
-            </div>
-            <div class="live-placeholder">
-                <i class="fas fa-video" style="font-size:3rem; display:block; margin-bottom:10px;"></i>
-                <span>🎥 فيديو: مظاهرة سلمية في الخليل</span>
-                <p style="font-size:0.9rem; opacity:0.7; margin-top:5px;">تم البث قبل 10 دقائق</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ============================================
-         قسم الاتصال بنا + التعليقات
-         ============================================ -->
-    <div class="container contact-section" id="contact">
-        <h2 class="section-title" style="margin-top:0;">
-            <i class="fas fa-phone-alt" style="margin-left:10px; color:#1a3a2b;"></i> اتصل بنا
-        </h2>
-        <p style="text-align:center; color:#666; font-size:1.05rem; max-width:600px; margin:0 auto 20px;">
-            تواصل مع فريق <strong>فاسطين</strong> لأي استفسار أو اقتراح، نسعد بخدمتكم.
-        </p>
-        <div class="contact-grid">
-            <!-- بطاقة المبرمج - أبو سعيد -->
-            <div class="contact-card developer">
-                <div class="contact-icon"><i class="fas fa-code"></i></div>
-                <h4>إعداد وبرمجة</h4>
-                <div class="contact-sub">المطور الرئيسي</div>
-                <div class="contact-value">
-                    <i class="fas fa-user"></i> أبو سعيد
-                </div>
-                <div style="margin: 10px 0 5px;">
-                    <div class="contact-value" style="background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.15); font-size:1.15rem; direction:ltr;">
-                        <i class="fas fa-phone"></i> <span class="phone-code">+970</span> 77 366 4939
-                    </div>
-                </div>
-                <div class="developer-badge">
-                    <i class="fas fa-star"></i> مطور معتمد
-                </div>
-            </div>
-            <!-- بطاقة البريد الإلكتروني -->
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <h4>البريد الإلكتروني</h4>
-                <div class="contact-sub">للتواصل الرسمي</div>
-                <div class="contact-value" style="direction:ltr;">
-                    <i class="fas fa-envelope"></i> info@falestine.ps
-                </div>
-            </div>
-            <!-- بطاقة الهاتف -->
-            <div class="contact-card">
-                <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                <h4>الهاتف</h4>
-                <div class="contact-sub">الدعم الفني</div>
-                <div class="contact-value" style="direction:ltr;">
-                    <i class="fas fa-phone"></i> <span class="phone-code">+970</span> 77 366 4939
-                </div>
-            </div>
-        </div>
-
-        <!-- ======== قسم التعليقات ======== -->
-        <div class="comments-section" id="comments">
-            <h3><i class="fas fa-comments"></i> التعليقات</h3>
-
-            <!-- نموذج إضافة تعليق -->
-            <form class="comment-form" id="commentForm">
-                <div class="form-row">
-                    <input type="text" id="commentName" placeholder="اسمك" required />
-                    <input type="email" id="commentEmail" placeholder="بريدك الإلكتروني (اختياري)" />
-                </div>
-                <textarea id="commentText" placeholder="اكتب تعليقك هنا..." required></textarea>
-                <button type="submit"><i class="fas fa-paper-plane"></i> أضف تعليقاً</button>
-            </form>
-
-            <!-- قائمة التعليقات -->
-            <div class="comment-list" id="commentList">
-                <div class="no-comments" id="noComments">
-                    <i class="fas fa-comment-slash" style="font-size:1.8rem; display:block; margin-bottom:8px;"></i>
-                    لا توجد تعليقات بعد، كن أول من يعلق!
-                </div>
-                <!-- سيتم إضافة التعليقات ديناميكياً هنا -->
+        <!-- قائمة التعليقات -->
+        <div class="comment-list" id="commentList">
+            <div class="no-comments" id="noComments">
+                <i class="fas fa-comment-slash" style="font-size:1.8rem; display:block; margin-bottom:8px;"></i>
+                لا توجد تعليقات بعد، كن أول من يعلق!
             </div>
         </div>
     </div>
@@ -895,7 +662,7 @@
                         <li><a href="#">الرئيسية</a></li>
                         <li><a href="#news">أخبار</a></li>
                         <li><a href="#reports">تقارير</a></li>
-                        <li><a href="#contact">اتصل بنا</a></li>
+                        <li><a href="#comments">التعليقات</a></li>
                     </ul>
                 </div>
                 <div>
@@ -904,4 +671,116 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                &copy; 2026 فاسطين - جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======== JavaScript للتعليقات ======== -->
+    <script>
+        (function() {
+            const form = document.getElementById('commentForm');
+            const commentList = document.getElementById('commentList');
+            const noComments = document.getElementById('noComments');
+
+            // تحميل التعليقات من localStorage
+            function loadComments() {
+                const saved = localStorage.getItem('falestine_comments');
+                return saved ? JSON.parse(saved) : [];
+            }
+
+            // حفظ التعليقات
+            function saveComments(comments) {
+                localStorage.setItem('falestine_comments', JSON.stringify(comments));
+            }
+
+            // عرض التعليقات
+            function renderComments() {
+                const comments = loadComments();
+                document.querySelectorAll('.comment-item').forEach(el => el.remove());
+
+                if (comments.length === 0) {
+                    noComments.style.display = 'block';
+                    return;
+                }
+                noComments.style.display = 'none';
+
+                comments.forEach((comment, index) => {
+                    const item = document.createElement('div');
+                    item.className = 'comment-item';
+                    item.innerHTML = `
+                        <div class="comment-header">
+                            <span class="comment-name"><i class="fas fa-user-circle"></i> ${escapeHtml(comment.name)}</span>
+                            <span class="comment-date"><i class="far fa-clock"></i> ${comment.date}</span>
+                        </div>
+                        <div class="comment-text">${escapeHtml(comment.text)}</div>
+                        <div class="comment-actions">
+                            <span><i class="far fa-heart" onclick="likeComment(${index})"></i> ${comment.likes || 0}</span>
+                            <span><i class="far fa-trash-alt" onclick="deleteComment(${index})"></i> حذف</span>
+                        </div>
+                    `;
+                    commentList.appendChild(item);
+                });
+            }
+
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            function addComment(name, text) {
+                const comments = loadComments();
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('ar-EG', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                comments.push({ name: name.trim(), text: text.trim(), date: dateStr, likes: 0 });
+                saveComments(comments);
+                renderComments();
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('commentName').value.trim();
+                const text = document.getElementById('commentText').value.trim();
+                if (name === '' || text === '') {
+                    alert('الرجاء ملء جميع الحقول المطلوبة.');
+                    return;
+                }
+                addComment(name, text);
+                form.reset();
+                document.getElementById('comments').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            window.deleteComment = function(index) {
+                if (!confirm('هل أنت متأكد من حذف هذا التعليق؟')) return;
+                const comments = loadComments();
+                comments.splice(index, 1);
+                saveComments(comments);
+                renderComments();
+            };
+
+            window.likeComment = function(index) {
+                const comments = loadComments();
+                comments[index].likes = (comments[index].likes || 0) + 1;
+                saveComments(comments);
+                renderComments();
+            };
+
+            // تحميل التعليقات عند فتح الصفحة
+            document.addEventListener('DOMContentLoaded', renderComments);
+        })();
+    </script>
+
+</body>
+</html>
